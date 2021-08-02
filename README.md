@@ -3,7 +3,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
 
 ## Conteúdos
 
-- [Javascript - Fundamentos](##javascript---fundamentos)
+- [Javascript - Fundamentos](#javascript---fundamentos)
   - [Algoritmo](#algoritmo)
     - [Representação](#representação)
   - [Estrutura de dados](#estrutura-de-dados)
