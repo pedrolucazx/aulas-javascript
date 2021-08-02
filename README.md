@@ -1,6 +1,20 @@
 # <p align="center">Web Moderno Completo com JavaScript</p>
 Esse repositório tem o intuito de registar minha evolução Curso Web Moderno Completo com JavaScript 2021 + Projetos e também para fixar melhor alguns conteúdos com resumos.
 
+## Conteúdos
+
+- [Javascript - Fundamentos](##javascript---fundamentos)
+  - [Algoritmo](#algoritmo)
+    - [Representação](#representação)
+  - [Estrutura de dados](#estrutura-de-dados)
+  - [Variáveis e Constantes](#variáveis-e-constantes)
+  - [Tipos de dados](#tipos-de-dados)
+  - [Hoisting](#hoisting)
+  - [Operadores](#operadores)
+  - [Dicas Importantes](#dicas-importantes)
+  - [O que eu aprendei]
+- [Autor](#autor)
+
 # Javascript - Fundamentos
 ## Algoritmo
 
@@ -9,7 +23,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
 - Tomadas de decisão
 - Ordem das etapas importam
 
-## Representação
+### Representação
 
 - fluxograma
 - linguagem natural
@@ -87,7 +101,7 @@ Uma definição estrita de elevação sugere que as declarações de variáveis 
 **_Ternário:_** O operador condicional retorna um dos dois valores baseado no valor lógico da condição.
 - **(condition ? ifTrue : ifFalse)**
 
-# Dicas Importantes.
+# Dicas Importantes
 - Deixe o seu código o mais simples possível escrever código simples, porém, escrever código fácil de ser lido não é algo fácil de ser atingido.
 - Digitar um código claro com bons nomes priorizar sentenças de código que não cause confusão. Não misture e tente não misturar vários operadores e uma expressão, porque vai trazer confusão, pois, seu código vai tornar o seu código mais difícil de ser lido.
 - Fatorar até que você tem um código que você deseja.
