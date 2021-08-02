@@ -108,9 +108,14 @@ Uma definição estrita de elevação sugere que as declarações de variáveis 
 - Tente manter o seu código mais simples possível e não tente jogar muitos comentários pra tentar justificar e explicar aquilo que está ruim do ponto de vista de design de código mesmo então preza pelo código limpo comente pouco e comente comentários que são relevantes.
 
 
-# Conclusãos
+# O que aprendi!
 Esse modele é o mais longo do curso, pois, os fundamentos são extremamente importantes para construir uma base solida é conseguir progredir com menos dificuldade nos demais conteúdos. Neste modulo compreendia o que são estruturas de dados, e a forma de organização de dado, comentários em linha e em blocos no JavaScript, diferença de variáveis var, let e como usar const, e quais diferenças entre elas, é padrão utilizar let, pois, tem 3 escopos, bloco, função e globa, enquanto var só tem 2, global e função. Já const é utilizado para definir elementos imutaveis do código. Quais são os tipos de dados padrões ECMAScript. O conceito de Hoisting (içamento), um pouco confuso a princípio, é como se as declarações de variáveis e funções são fisicamente movidas para o topo do seu código. Além disso, os tipos de operadores, atribuição, aritméticos, relacionais, lógicos, unários, ternário e os Destructuring. Esse último é um pouco mais complexo porém tiveram muitos exemplos a definição da sintaxe de atribuição via desestruturação (destructuring assignment) é uma expressão JavaScript que possibilita extrair dados de arrays ou objetos em variáveis distintas.
- 
 
+## Autor
+<div>
+  <a href="https://instagram.com/pedrolucazx" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/pedrolucazx/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://twitter.com/pedrolucazx" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" target="_blank"></a>
+</div>
 
 
