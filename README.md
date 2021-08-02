@@ -12,7 +12,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
   - [Hoisting](#hoisting)
   - [Operadores](#operadores)
   - [Dicas Importantes](#dicas-importantes)
-  - [O que eu aprendei](##o-que-aprendi)
+  - [O que eu aprendei](#o-que-aprendi)
 - [Autor](#autor)
 
 # Javascript - Fundamentos
