@@ -4,7 +4,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
 
 ## Conteúdos
 
-- [1) Javascript - Fundamentos](#javascript---fundamentos)
+- [1) Javascript - Fundamentos](#1-javascript---fundamentos)
   - [Algoritmo](#algoritmo)
     - [Representação](#representação)
   - [Estrutura de dados](#estrutura-de-dados)
@@ -14,6 +14,16 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
   - [Operadores](#operadores)
   - [Dicas Importantes](#dicas-importantes)
   - [O que eu aprendei](#o-que-aprendi)
+- [Javascript: Estruturas de Controle](#2-javascript-estruturas-de-controle)
+  - [if...else](#ifelse)
+  - [switch](#switch)
+  - [while](#switch)
+  - [do...while](#dowhile)
+  - [for](#for)
+  - [for...in](#forin)
+  - [break](#break)
+  - [continue](#continue)
+  - [O que eu aprendei](#o-que-aprendi-1)
 - [Autor](#autor)
 
 # 1) Javascript - Fundamentos
@@ -145,7 +155,12 @@ Você pode aninhar uma ou mais declarações try. Caso uma declaração try inte
 
 A condicional **if** é uma estrutura condicional que executa a afirmação, dentro do bloco, se determinada condição for _verdadeira_. Se for _falsa_, executa as afirmações dentro de **else**.
 
-`if (condição) { instrução1 } else { instrução2 }`
+```
+if (condição) { 
+  instrução1 
+  } else { 
+    instrução2 }
+```
 
 Para executar multiplas instruções dentro de uma condição, utilize um bloco ({ ... }) . Em geral, é sempre uma boa prática utilizar instruções dentro de blocos, especialmente em códigos que envolvam condicionais if aninhadas
 
@@ -212,6 +227,13 @@ O comando break encerra o loop atual, switch, ou o loop que foi informado no whi
 A palavra chave continue termina a atual iteração do laço em que ele se encontra ou de um laço rotulado, e continua a execução deste laço com a próxima iteração.
 
 ## O que aprendi!
+
+- Jeitos fácil e rápido de executar uma ação repetidas vezes.
+- Existem várias formas diferentes de estruturas de controle, mas eles essencialmente fazem a mesma coisa.
+- Os vários mecanismos diferentes de estruturas de controle oferecem diferentes formas de determinar quando este irá começar ou terminar.
+- Há várias situações em que é mais fácil resolver um problema utilizando um determinada estruturas de controle.
+
+# 3) Javascript: Função
 
 # Dicas Importantes
 
