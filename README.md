@@ -67,7 +67,7 @@ Você pode declarar uma variável de quatro formas:
 
 - Com a palavra chave var. Por exemplo, var x = 42. Esta sintaxe pode ser usada para declarar tanto variáveis locais como variáveis globais.
 - Por simples adição de valor. Por exemplo, x = 42. Isso declara uma variável global. Essa declaração gera um aviso de advertência no JavaScript. Você não deve usar essa variante.
-- Com a palavra chave let. Por exemplo, let y = 13. Essa sintaxe pode ser usada para declarar uma variável local de escopo de bloco. Veja escopo de variável abaixo.
+- Com a palavra chave let. Por exemplo, let y = 13. Essa sintaxe pode ser usada para declarar uma variável local de escopo de bloco. 
 - Você pode criar uma constante apenas de leitura por meio da palavra-chave **_const_**
 
 ## Tipos de dados
@@ -82,7 +82,7 @@ Seis tipos de dados são os chamados primitivos:
 - **_Number:_** 42 ou 3.14159.
 - **_String:_** "Howdy"
 - **_Symbol (novo em ECMAScript 6):_** Um tipo de dado cuja as instâncias são únicas e imutáveis.
-  **_Object:_** refere-se a uma estrutura de dados contendo dados e instruções para se trabalhar com estes dados. Objetos são grupos aninhados de pares key/valeu
+- **_Object:_** refere-se a uma estrutura de dados contendo dados e instruções para se trabalhar com estes dados. Objetos são grupos aninhados de pares key/valeu
 
 ## Hoisting
 
@@ -121,6 +121,16 @@ Uma definição estrita de elevação sugere que as declarações de variáveis 
 
 - **(condition ? ifTrue : ifFalse)**
 
+**_Destructuring_**
+A atribuição via desestruturação usa sintaxe similar, mas no lado esquerdo da atribuição são definidos quais elementos devem ser extraídos da variável de origem.
+
+```
+var x = [1, 2, 3, 4, 5];
+var [y, z] = x;
+console.log(y); // 1
+console.log(z); // 2
+```
+
 ## Tratamento de Erro (Try/Catch/Throw)
 
 A declaração try consiste em um bloco try, que contém uma ou mais declarações, e ao menos uma cláusula catch ou uma cláusula finally, ou ambas. Ou seja, há 3 formas de declarações try :
@@ -135,13 +145,15 @@ A cláusula finally é executada após a excecução do bloco try e da(s) cláus
 
 Você pode aninhar uma ou mais declarações try. Caso uma declaração try interior não tenha uma cláusula catch, a cláusula catch pertencente a declaração try que a envolve é introduzida.
 
+A declaração throw lança uma exceção definida pelo usuário. A execução da função atual vai parar (as instruções após o throw não serão executadas), e o controle será passado para o primeiro bloco catch na pilha de chamadas. Se nenhum bloco catch existe entre as funções "chamadoras", o programa vai terminar.
+
 ## O que aprendi!
 
 - Os fundamentos são extremamente importantes para construir uma base solida.
 - O que estruturas de dados são formas de organização de dados.
 - Comentários em linha e em blocos no JavaScript.
 - Diferença tipos variáveis var, let e como usar const, e quais diferenças entre elas.
-- É padrão utilizar let, pois, tem 3 escopos, bloco, função e globa.
+- É padrão utilizar let, pois, tem 3 escopos, bloco, função e global.
 - var tem apenas dois escopo, global e função.
 - const é utilizado para definir elementos imutaveis do código.
 - Quais são os tipos de dados padrões ECMAScript.
