@@ -14,7 +14,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
   - [Operadores](#operadores)
   - [Dicas Importantes](#dicas-importantes)
   - [O que eu aprendei](#o-que-aprendi)
-- [Javascript: Estruturas de Controle](#2-javascript-estruturas-de-controle)
+- [2) Javascript: Estruturas de Controle](#2-javascript-estruturas-de-controle)
   - [if...else](#ifelse)
   - [switch](#switch)
   - [while](#switch)
@@ -24,6 +24,22 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
   - [break](#break)
   - [continue](#continue)
   - [O que eu aprendei](#o-que-aprendi-1)
+- [3) Javascript: Função](#)
+  - [Definindo Funções](#)
+  - [Função First-class](#)
+  - [Parâmetros](#)
+  - [THIS](#)
+  - [Arrow Functions](#)
+    - [Sintexe](#)
+  - [Funções Anônimas](#)
+  - [Função Callback](#)
+  - [Funções Construtoras](#)
+  - [Tipos de Declaração](#)
+  - [Closures](#)
+  - [Função Factory ](#)
+  - [Classe vs Função Factory](#)
+  - [IIFE](#)
+  - [O que eu aprendei](#o-que-aprendi-2)
 - [Autor](#autor)
 
 # 1) Javascript - Fundamentos
@@ -124,7 +140,7 @@ Uma definição estrita de elevação sugere que as declarações de variáveis 
 **_Destructuring_**
 A atribuição via desestruturação usa sintaxe similar, mas no lado esquerdo da atribuição são definidos quais elementos devem ser extraídos da variável de origem.
 
-```
+```jsx
 var x = [1, 2, 3, 4, 5];
 var [y, z] = x;
 console.log(y); // 1
@@ -167,7 +183,7 @@ A declaração throw lança uma exceção definida pelo usuário. A execução d
 
 A condicional **if** é uma estrutura condicional que executa a afirmação, dentro do bloco, se determinada condição for _verdadeira_. Se for _falsa_, executa as afirmações dentro de **else**.
 
-```
+```jsx
 if (condição) { 
   instrução1 
   } else { 
@@ -182,7 +198,7 @@ Não confunda os valores boolean primitivos true e false com os valores true e f
 
 A condicional switch avalia uma expressão, combinando o valor da expressão para um cláusula case, e executa as instruções associadas ao case.
 
-```
+```jsx
 switch (expressão) {
   case valor1:
     //Instruções executadas quando o resultado da expressão for igual á valor1
@@ -203,7 +219,7 @@ A instrução opcional break associada com cada case garante que o programa saia
 ## while
 A declaração while cria um laço que executa uma rotina especifica enquanto a condição de teste for avaliada como verdadeira. A condição é avaliada antes da execução da rotina.
 
-```
+```jsx
 while (condição) {
   rotina
 }
@@ -211,7 +227,7 @@ while (condição) {
 ## do...while
 A declaração do...while cria um laço que executa uma declaração até que o teste da condição for falsa (false). A condição é avaliada depois que o bloco de código é executado, resultando que uma declaração seja executada pelo menos uma vez
 
-```
+```jsx
 do
    rotina
 while (condition);
@@ -219,7 +235,7 @@ while (condition);
 ## for
 A instrução for cria um loop que consiste em três expressões opcionais, dentro de parênteses e separadas por ponto e vírgula, seguidas por uma declaração ou uma sequência de declarações executadas em sequência.
 
-```
+```jsx
 for ([inicialização]; [condição]; [expressão final])
    declaração
 ```
@@ -228,7 +244,7 @@ for ([inicialização]; [condição]; [expressão final])
 
 O laço for...in  interage sobre propriedades enumeradas de um objeto, na ordem original de inserção.  O laço pode ser executado para cada propriedade distinta do objeto.
 
-```
+```jsx
 for (variavel in objeto) {...
 }
 ```
@@ -246,6 +262,248 @@ A palavra chave continue termina a atual iteração do laço em que ele se encon
 - Há várias situações em que é mais fácil resolver um problema utilizando um determinada estruturas de controle.
 
 # 3) Javascript: Função
+
+## Definindo Funções
+
+Funções são blocos de construção fundamentais em JavaScript. Uma função é um procedimento de JavaScript - um conjunto de instruções que executa uma tarefa ou calcula um valor.
+
+## Função First-class
+
+Entende-se que uma linguagem de programação tem **Função First-class** quando suas funções são tratadas como qualquer outra variável. Por exemplo, numa linguagem desse tipo, a função pode ser passada como argumento pra outras funções, ser retornada por outra função e pode ser atribuída como um valor à uma variável.
+
+## Parâmetros
+
+Uma função JavaScript pode ter 0 ou mais parâmetros declarados. O corpo da função pode conter tantas instruções quantas quiser e pode declarar suas próprias variáveis que são de escopo local àquela função. A instrução return pode ser usada para retornar um valor em qualquer parte da função, finalizando a função. Se nenhuma instrução de retorno for usada (ou um retorno vazio sem valor), o JavaScript retorna undefined.
+
+Os parâmetros nomeados se parecem mais com orientações do que com outra coisa. Você pode chamar a função sem passar o parâmetro esperado, nesse caso eles receberão o valor undefined. No corpo da função você tem acesso a uma variável adicional chamada arguments, que é um objeto parecido com um vetor que contém todos os valores passados para a função.
+
+Parâmetros padrão: Em JavaScript, parâmetros padrões de funções são undefined. No entanto, em algumas situações pode ser útil definir um valor padrão diferente. Isto é onde os parâmetros padrão podem ajudar.
+
+```jsx
+//* valor padrão do ES2015
+function soma3(a = 1, b = 1, c = 1){
+    return a + b + c
+}
+
+console.log(soma3(),soma3(3),soma3(1,2,3),soma3(0,0,0));
+```
+
+## THIS
+
+A palavra-chave **`this`** comporta-se um pouco diferente em Javascript se comparado com outras linguagens. Também possui algumas diferenças entre o modo estrito e o modo não estrito.
+
+Em muitos casos, o valor `this` é determinado pela forma como a função é chamada. Ele não pode ser assinado durante a execução, e isso pode ser diferente a cada vez que a função é chamada. ES5 introduziu o método `bind` para estabelecer o valor `this` da função, independentemente de como ela seja chamada, e ECMAScript 2015 introduziu o arrow functions, cujo `this` é lexicalmente delimitado (o valor `this` é estabelecido segundo o escopo de execução no qual está inserido).
+
+## Arrow Functions
+
+Uma expressão arrow function possui uma sintaxe mais curta quando comparada a uma expressão de função e não tem seu próprio this, arguments. Estas expressões de funções são melhor aplicadas para funções que não sejam métodos, e elas não podem ser usadas como construtoras (constructors).
+
+### Sintexe
+
+```jsx
+(param1, param2, …, paramN) => { statements }
+(param1, param2, …, paramN) => expression
+// equivalente a: => { return expression; }
+
+// Parênteses são opcionais quando só há um nome de parâmetro:
+(singleParam) => { statements }
+singleParam => { statements }
+
+// A lista de parâmetros para uma função sem parâmetros deve ser escrita com um par de parênteses.
+() => { statements }
+```
+
+## Funções Anônimas
+
+Funções também podem ser criadas por uma expressão de função. Tal função pode ser anônima; ele não tem que ter um nome.
+
+```jsx
+const soma = function (x,y){
+    return x + y;
+}
+
+const imprimirResultado = function (a,b, operacao = soma) {
+    console.log(operacao(a,b))
+}
+```
+
+## Função Callback
+
+Uma função callback é uma função passada a outra função como argumento, que é então invocado dentro da função externa para completar algum tipo de rotina ou ação
+
+```jsx
+const notas = [4,5,7,8,9,9.9,9.8,9.7];
+
+const notasBaixas2 = notas.filter(function (nota){
+    return nota < 7;
+})
+console.log(notasBaixas2);
+//[ 4, 5 ]
+
+const notasMaioresQue7 = nota => nota < 7; 
+const notasBaixas3 = notas.filter(notasMaioresQue7);
+console.log(notasBaixas3);
+//[ 4, 5 ]
+```
+
+## **Funções Construtoras**
+
+As funções construtoras em JavaScript são como as classes do Java, diferenciando apenas pela sintaxe. Em questão de funcionamento, tanto funções construtoras no JavaScript quanto Classes no Java têm a mesma utilidade: **servir de molde para a criação de objetos.**
+
+Para construir objetos, funções construtoras precisam ser instanciadas pelo **operador new**. O **this** dentro delas se referencia ao **objeto criado a partir delas.**
+
+No exemplo abaixo, a função **Carro** é uma função construtora, e **carro1** é um objeto criado a partir do “molde” dessa classe, usando o operador new
+
+```jsx
+function Carro(marca, modelo, ano){
+    this.marca = marca
+    this.modelo = modelo
+    this.ano = ano
+}
+
+const carro1 = new Carro('Charger', 'RT', 1970)
+
+console.log(carro1)
+```
+
+## Tipos de Declaração
+
+```jsx
+console.log(soma(3,4))
+
+//* Function declaration - o interpretador JavaScript primeiro carrega as funções
+function soma(x,y){
+    return x + y
+}
+
+//* Function Expression 
+const sub = function (x,y) {
+    return x - y
+}
+console.log(sub(3,4))
+
+//* named function expression
+const mult = function mult(x,y){
+    return x*y
+}
+console.log(mult(3,4))
+```
+
+## Closures
+
+Um *closure* (fechamento) é uma função que se "lembra" do ambiente — ou escopo léxico — em que ela foi criada.
+
+```jsx
+//* Closure é o espoco criado quando uma função é declarada
+//* Esse escopo permite a função acessar a maniputalar variáveis externas à função
+
+//* Contexto léxico em ação!
+const x = 'Global'
+
+function fora() {
+    const x = 'local'
+    function dentro() {
+        return x
+    }
+    return dentro
+}
+
+const myFunction = fora();
+console.log(myFunction());
+```
+
+## Função Factory
+
+Uma função de fábrica é uma função que retorna um novo objeto
+
+```jsx
+function criarProduto(nome, preco){
+    return{
+        nome,
+        preco,
+        desconto: 0.1
+    }
+}
+
+console.log(criarProduto('Mac', 10000.00))
+console.log(criarProduto('Iphone', 5000.00))
+```
+
+## Classe vs Função Factory
+
+```jsx
+//* Usando class
+class Pessoa {
+    constructor(nome){
+        this.nome = nome;
+    }
+    falar() {
+        console.log(`Meu nome é ${this.nome}!`)
+    }
+}
+
+const p1 = new Pessoa ('Pedro')
+p1.falar()
+
+//* Usando Factory Function
+const criarPessoa = nome => {
+    return{
+        falar: () => console.log(`Meu nome é ${nome}!`)
+    }
+}
+
+const p2 = criarPessoa('Pedro');
+p2.falar()
+```
+
+## IIFE
+
+**IIFE** (Immediately Invoked Function Expression) é uma função em JavaScript que é executada assim que definida.
+
+É um Design Pattern e contém duas partes principais. A primeira é a função anônima cujo escopo léxico é encapsulado entre parênteses. Isso previne o acesso externo às variáveis declaradas na IIFE, bem como evita que estas variáveis locais poluam o escopo global. A segunda parte corresponde à criação da expressão `()`, por meio da qual o interpretador JavaScript avaliará e executará a função.
+
+```jsx
+(function() {
+    console.log('Será exetutado na hora')
+    console.log('Foge do escopo mais abrangente!')
+})()
+```
+
+## Call & Apply
+
+Você pode atribuir um objeto this diferente quando executar uma função existente. this refere-se ao objeto atual, o objeto em execução. Com call, você pode escrever um método uma vez e então herdá-lo em outro objeto, sem ter que reescrever o método para o novo objeto.
+
+***A sintaxe desta função é quase idêntica a essa da call(), a diferença é que call() aceita uma lista de argumentos, enquanto apply() aceita um array de argumentos.***
+
+```jsx
+function getPreco(imposto = 0, moeda = 'R$'){
+    return `${moeda} ${this.preco * (1 - this.desc) * (1 + imposto)}`
+}
+
+const carro = { preco: 400000, desc: 0.30}
+
+console.log(getPreco.call(carro))
+console.log(getPreco.apply(carro))
+
+console.log(getPreco.call(carro, 0.17, '$' ))
+console.log(getPreco.apply(carro, [0.17, '$']))
+```
+## O que aprendi!
+- Conceitos de Função First-class
+- função JavaScript pode ter 0 ou mais parâmetros declarados
+- Parâmetros padrão
+- Contexto Léxico do THIS
+- Arrow Functions
+- Funções Anônimas
+- Uma função callback é uma função passada a outra função como argumento
+- Function constructor
+- Tipos de declaração: Function declaration, function expression
+- Conceito de Closures
+- Função Factory retorna um novo objeto
+- Diferença entre Classe e Função Factory
+- Design Pattern IIFE
+- Diferença em Call e Apply
+
 
 # Dicas Importantes
 
