@@ -38,7 +38,7 @@ Esse repositório tem o intuito de registar minha evolução Curso Web Moderno C
   - [Closures](#closures)
   - [Função Factory ](#função-factory)
   - [Classe vs Função Factory](#classe-vs-função-factory)
-  - [IIFE](#)iife
+  - [IIFE](#iife)
   - [O que eu aprendei](#o-que-aprendi-2)
 - [Autor](#autor)
 
