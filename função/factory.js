@@ -1,9 +1,9 @@
 //* Factory simples
-function criarPessoa(){
+function CriarPessoa(){
     return{
         nome:'Ana',
         sobrenome:'Silva'
     }
 }
 
-console.log(criarPessoa())
+console.log(CriarPessoa())
